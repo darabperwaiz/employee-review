@@ -1,0 +1,33 @@
+<header id="layout-header">
+  <nav class="navbar">
+    <div class="container-fluid">
+      <div class="navbar-brand">Employee Review</div>
+      <form class="d-flex">
+        <% if (title!='Sign In' && title!='Sign Up') { %>
+
+        <div class="user-name"><%= user.name %></div>
+
+        <div class="icon">
+          <a href="/user/profile">
+            <i class="fas fa-user-circle user-icon"></i>
+          </a>
+        </div>
+
+        <div class="icon">
+          <a href="/user/sign-out">
+            <i class="fas fa-sign-out-alt logout-icon"></i>
+          </a>
+        </div>
+
+        <% } else { %> <% if (title=='Sign In') { %>
+        <a href="/user/sign-up"
+          ><button type="button" class="btn btn-primary">SIGN UP</button></a
+        >
+        <% } else if (title=='Sign Up') { %>
+        <a href="/user/sign-in"
+          ><button type="button" class="btn btn-primary">SIGN IN</button></a
+        ><% } %> <% } %>
+      </form>
+    </div>
+  </nav>
+</header>
